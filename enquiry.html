@@ -7,21 +7,30 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<!-- Enquiry page — trial booking / general enquiry form. -->
 
+<!-- Site header: brand logo and primary navigation, shared across all pages -->
 <header>
   <div class="nav-wrap">
     <a href="index.html" class="brand">METRO<span>GYM</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </label>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="classes.html">Classes</a></li>
+        <li><a href="services.html">Classes</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="enquiry.html" aria-current="page">Enquire</a></li>
       </ul>
     </nav>
   </div>
 </header>
+
+<!-- Main page content -->
+<main>
 
 <section class="hero" style="padding:70px 0 50px;">
   <div class="container">
@@ -64,6 +73,9 @@
   </div>
 </section>
 
+</main>
+
+<!-- Site footer: copyright and tagline, shared across all pages -->
 <footer>
   <div class="container">
     <span>&copy; 2026 MetroGym. Cape Road, Gqeberha.</span>
@@ -71,5 +83,6 @@
   </div>
 </footer>
 
+<script src="js/script.js"></script>
 </body>
 </html>
