@@ -42,14 +42,16 @@
 
 <section>
   <div class="container">
-    <form action="#" method="post">
+    <form id="enquiry-form" novalidate>
       <div class="field">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" required>
+        <span class="field-error" id="name-error"></span>
       </div>
       <div class="field">
         <label for="email">Email Address</label>
         <input type="email" id="email" name="email" required>
+        <span class="field-error" id="email-error"></span>
       </div>
       <div class="field">
         <label for="phone">Phone Number</label>
@@ -57,11 +59,11 @@
       </div>
       <div class="field">
         <label for="interest">I'm Interested In</label>
-        <select id="interest" name="interest">
-          <option value="metrofit">MetroFit</option>
-          <option value="strength">Strength &amp; Conditioning</option>
-          <option value="metrostart">MetroStart (Beginners)</option>
-          <option value="other">Not Sure Yet</option>
+        <select id="interest" name="interest" required>
+          <option value="MetroFit">MetroFit</option>
+          <option value="Strength & Conditioning">Strength &amp; Conditioning</option>
+          <option value="MetroStart">MetroStart (Beginners)</option>
+          <option value="Not Sure Yet">Not Sure Yet</option>
         </select>
       </div>
       <div class="field">
@@ -69,6 +71,7 @@
         <textarea id="message" name="message" placeholder="Tell us about your fitness goals or ask a question..."></textarea>
       </div>
       <button type="submit" class="btn">Submit Enquiry</button>
+      <div id="enquiry-response" class="form-response" role="status" aria-live="polite"></div>
     </form>
   </div>
 </section>
