@@ -1,23 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MetroGym | Functional Fitness in Gqeberha</title>
+
+<!-- SEO: unique title, description and keywords for this page -->
+<title>MetroGym | Functional Fitness Gym in Gqeberha</title>
+<meta name="description" content="MetroGym is a functional fitness gym on Cape Road, Gqeberha. Coach-led CrossFit-style classes for all levels. Book your free first class today.">
+<meta name="keywords" content="functional fitness Gqeberha, CrossFit Gqeberha, gym Gqeberha, group fitness classes, beginner gym, MetroGym">
+<meta name="author" content="Phawu Zotwa">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1A1B1D">
+<link rel="canonical" href="https://phawu6-spec.github.io/metrogym/">
+
+<!-- Social sharing previews (Open Graph / Twitter) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MetroGym">
+<meta property="og:title" content="MetroGym | Functional Fitness Gym in Gqeberha">
+<meta property="og:description" content="MetroGym is a functional fitness gym on Cape Road, Gqeberha. Coach-led CrossFit-style classes for all levels. Book your free first class today.">
+<meta property="og:url" content="https://phawu6-spec.github.io/metrogym/">
+<meta property="og:image" content="https://phawu6-spec.github.io/metrogym/images/hero-training.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="images/logo-mark.png">
+
+<!-- Fonts and stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.className += ' js';</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "name": "MetroGym",
+  "url": "https://phawu6-spec.github.io/metrogym/",
+  "image": "https://phawu6-spec.github.io/metrogym/images/gym-exterior.png",
+  "description": "Coach-led functional fitness and CrossFit-style classes on Cape Road, Gqeberha, founded in 2016 by Asavela Kahla.",
+  "telephone": "+27415550123",
+  "email": "info@metrogym.co.za",
+  "foundingDate": "2016",
+  "founder": {
+    "@type": "Person",
+    "name": "Asavela Kahla"
+  },
+  "priceRange": "R200 - R550 per month",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Cape Road",
+    "addressLocality": "Gqeberha",
+    "addressRegion": "Eastern Cape",
+    "addressCountry": "ZA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.9456,
+    "longitude": 25.5702
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "05:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "07:00",
+      "closes": "12:00"
+    }
+  ]
+}
+</script>
 </head>
 <body>
-<!-- Homepage — hero introduction, value props, and a call-to-action to book a free trial. -->
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<!-- Site header: brand logo and primary navigation, shared across all pages -->
+<!-- Site header: brand and primary navigation, shared across all pages -->
 <header>
   <div class="nav-wrap">
-    <a href="index.html" class="brand">METRO<span>GYM</span></a>
+    <a href="index.html" class="brand" aria-label="MetroGym home">METRO<span>GYM</span></a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </label>
-    <nav>
+    <nav id="site-nav" aria-label="Main navigation">
       <ul>
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -30,13 +105,14 @@
 </header>
 
 <!-- Main page content -->
-<main>
+<main id="main">
 
+<!-- Hero: single H1, short pitch and the two main calls to action -->
 <section class="hero">
   <div class="container">
     <p class="eyebrow">Cape Road, Gqeberha</p>
     <h1>Train Like<br>The Metro.</h1>
-    <p class="lead">Functional fitness and CrossFit-style coaching for people who want real strength, not just a gym membership. Founded 2016 by Asavela Kahla.</p>
+    <p class="lead">A functional fitness gym in Gqeberha offering coach-led, CrossFit-style classes for people who want real strength, not just a gym membership. Founded 2016 by Asavela Kahla.</p>
     <a href="enquiry.html" class="btn">Book a Free Trial</a>
     <a href="services.html" class="btn-outline" style="margin-left:14px;">View Classes</a>
   </div>
@@ -44,24 +120,35 @@
 
 <section>
   <div class="container">
-    <img src="images/hero-training.png" alt="Coach-led training session on the MetroGym floor" class="photo">
+    <img src="images/hero-training.png" alt="Coach-led functional fitness training on the MetroGym floor in Gqeberha" class="photo" width="836" height="561">
   </div>
 </section>
 
+<!-- Dynamic content: built by js/script.js from data/classes.json and the clock -->
 <section>
+  <div class="container reveal">
+    <p class="eyebrow-label">Live Timetable</p>
+    <h2>What's On Today</h2>
+    <div id="today-widget" aria-live="polite">
+      <p class="today-note">See the full weekly timetable on our <a href="services.html">classes and schedule page</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
   <div class="container">
     <p class="eyebrow-label">Why MetroGym</p>
-    <h2>Built On The Floor, Not On A Brochure</h2>
+    <h2>Coach-Led Functional Fitness In Gqeberha</h2>
     <div class="grid">
-      <div class="card">
+      <div class="card reveal">
         <h3>Coached Sessions</h3>
         <p>Every class is led, not self-serve. Our coaches correct form in real time so you train hard without training hurt.</p>
       </div>
-      <div class="card">
+      <div class="card reveal">
         <h3>Small Class Sizes</h3>
         <p>We cap numbers so every athlete gets attention, from their first workout to their hundredth.</p>
       </div>
-      <div class="card">
+      <div class="card reveal">
         <h3>Community First</h3>
         <p>MetroGym members show up for each other. It's the reason most people stay long after the first month.</p>
       </div>
@@ -74,22 +161,28 @@
   </div>
 </section>
 
-<section class="alt">
+<section>
   <div class="container">
     <p class="eyebrow-label">Get Started</p>
     <h2>Your First Class Is On Us</h2>
-    <p style="color:var(--steel); max-width:520px; margin-top:10px;">No experience needed. Come as you are, and we'll scale the workout to you.</p>
+    <p style="color:var(--steel); max-width:520px; margin-top:10px;">No experience needed. Come as you are, and we'll scale the workout to you. Not sure where to start? Compare every class on our <a href="services.html">class schedule and prices</a> page.</p>
     <a href="enquiry.html" class="btn" style="margin-top:24px;">Send an Enquiry</a>
   </div>
 </section>
 
 </main>
 
-<!-- Site footer: copyright and tagline, shared across all pages -->
+<!-- Site footer: copyright, tagline and internal links, shared across all pages -->
 <footer>
   <div class="container">
-    <span>&copy; 2026 MetroGym. Cape Road, Gqeberha.</span>
+    <span>&copy; <span id="year">2026</span> MetroGym. Cape Road, Gqeberha.</span>
     <span>Functional Fitness Since 2016</span>
+    <ul class="footer-links">
+      <li><a href="services.html">Class schedule and prices</a></li>
+      <li><a href="enquiry.html">Book a free trial class</a></li>
+      <li><a href="contact.html">Find MetroGym on the map</a></li>
+      <li><a href="about.html">Our story and founder</a></li>
+    </ul>
   </div>
 </footer>
 

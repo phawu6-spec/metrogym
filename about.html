@@ -1,23 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | MetroGym</title>
+
+<!-- SEO: unique title, description and keywords for this page -->
+<title>About MetroGym | Coach-Led Fitness in Gqeberha Since 2016</title>
+<meta name="description" content="Meet MetroGym: a coach-led functional fitness gym founded in 2016 by Asavela Kahla on Cape Road, Gqeberha. See our story, values and facility photos.">
+<meta name="keywords" content="about MetroGym, Asavela Kahla, functional fitness founder, gym history Gqeberha, coaching values">
+<meta name="author" content="Phawu Zotwa">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1A1B1D">
+<link rel="canonical" href="https://phawu6-spec.github.io/metrogym/about.html">
+
+<!-- Social sharing previews (Open Graph / Twitter) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MetroGym">
+<meta property="og:title" content="About MetroGym | Coach-Led Fitness in Gqeberha Since 2016">
+<meta property="og:description" content="Meet MetroGym: a coach-led functional fitness gym founded in 2016 by Asavela Kahla on Cape Road, Gqeberha. See our story, values and facility photos.">
+<meta property="og:url" content="https://phawu6-spec.github.io/metrogym/about.html">
+<meta property="og:image" content="https://phawu6-spec.github.io/metrogym/images/about-facility.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="images/logo-mark.png">
+
+<!-- Fonts and stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.className += ' js';</script>
 </head>
 <body>
-<!-- About page — organisation history, mission/vision, values, and founder profile. -->
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<!-- Site header: brand logo and primary navigation, shared across all pages -->
+<!-- Site header: brand and primary navigation, shared across all pages -->
 <header>
   <div class="nav-wrap">
-    <a href="index.html" class="brand">METRO<span>GYM</span></a>
+    <a href="index.html" class="brand" aria-label="MetroGym home">METRO<span>GYM</span></a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </label>
-    <nav>
+    <nav id="site-nav" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" aria-current="page">About</a></li>
@@ -30,7 +55,7 @@
 </header>
 
 <!-- Main page content -->
-<main>
+<main id="main">
 
 <section class="hero" style="padding:70px 0 50px;">
   <div class="container">
@@ -49,24 +74,56 @@
     <p style="max-width:640px; color:var(--steel); margin-top:14px;">
       We focus on functional, CrossFit-style training — movements that build strength you actually use outside the gym. Every session is coach-led, scalable to any fitness level, and built around a class culture where members push each other.
     </p>
-    <img src="images/about-facility.png" alt="Inside the MetroGym training facility" class="photo photo-frame">
+    <div class="grid grid-2">
+      <div class="card reveal">
+        <h3>Our Mission</h3>
+        <p>To help members build real, functional strength through expert coaching and a supportive training community.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Our Vision</h3>
+        <p>To be Gqeberha's leading functional fitness facility, known for coaching quality and member results.</p>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- Image gallery: thumbnails open in the lightbox built by js/script.js (plain links still work without JavaScript) -->
 <section class="alt">
+  <div class="container">
+    <p class="eyebrow-label">Take A Look</p>
+    <h2>Inside MetroGym</h2>
+    <p style="max-width:640px; color:var(--steel); margin-top:10px;">Select a photo to view it larger. Use the arrow keys or swipe to move between photos.</p>
+    <div class="gallery">
+      <a class="gallery-item" href="images/hero-training.png" data-caption="Coach-led training on the main floor">
+        <img src="images/hero-training.png" alt="Coach-led functional fitness training on the MetroGym main floor" width="836" height="561" loading="lazy">
+      </a>
+      <a class="gallery-item" href="images/about-facility.png" data-caption="The MetroGym training facility">
+        <img src="images/about-facility.png" alt="Inside the MetroGym training facility with racks and free weights" width="519" height="737" loading="lazy">
+      </a>
+      <a class="gallery-item" href="images/class-session.png" data-caption="A coached class session in progress">
+        <img src="images/class-session.png" alt="Members taking part in a coached class session at MetroGym" width="570" height="603" loading="lazy">
+      </a>
+      <a class="gallery-item" href="images/gym-exterior.png" data-caption="MetroGym on Cape Road, Gqeberha">
+        <img src="images/gym-exterior.png" alt="MetroGym exterior on Cape Road, Gqeberha" width="464" height="743" loading="lazy">
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="container">
     <p class="eyebrow-label">What We Stand For</p>
     <h2>Our Values</h2>
     <div class="grid">
-      <div class="card">
+      <div class="card reveal">
         <h3>Coaching Over Convenience</h3>
         <p>We'd rather run a smaller class properly than a bigger one badly. Coaching quality comes first.</p>
       </div>
-      <div class="card">
+      <div class="card reveal">
         <h3>Progress You Can See</h3>
         <p>We track your numbers so improvement isn't a feeling — it's on the whiteboard.</p>
       </div>
-      <div class="card">
+      <div class="card reveal">
         <h3>Everyone Scales</h3>
         <p>Every workout is scaled to the athlete in front of us, from first-timers to competitors.</p>
       </div>
@@ -74,15 +131,15 @@
   </div>
 </section>
 
-<section>
+<section class="alt">
   <div class="container">
     <p class="eyebrow-label">Leadership</p>
     <h2>Founder</h2>
-    <div class="grid" style="grid-template-columns: 220px 1fr; align-items:start;">
-      <img src="images/founder-asavela-kahla.png" alt="Asavela Kahla, founder of MetroGym" class="photo" style="margin-top:24px;">
+    <div class="grid grid-founder">
+      <img src="images/founder-asavela-kahla.png" alt="Asavela Kahla, founder of MetroGym" class="photo" width="587" height="510" loading="lazy" style="margin-top:24px;">
       <div class="card" style="margin-top:24px;">
         <h3>Asavela Kahla</h3>
-        <p>Founder of MetroGym, Cape Road, Gqeberha — opened in 2016 to bring coached, functional fitness training to the local community.</p>
+        <p>Founder of MetroGym, Cape Road, Gqeberha — opened in 2016 to bring coached, functional fitness training to the local community. Ready to meet the team? <a href="enquiry.html">Book a free trial class</a>.</p>
       </div>
     </div>
   </div>
@@ -90,11 +147,17 @@
 
 </main>
 
-<!-- Site footer: copyright and tagline, shared across all pages -->
+<!-- Site footer: copyright, tagline and internal links, shared across all pages -->
 <footer>
   <div class="container">
-    <span>&copy; 2026 MetroGym. Cape Road, Gqeberha.</span>
+    <span>&copy; <span id="year">2026</span> MetroGym. Cape Road, Gqeberha.</span>
     <span>Functional Fitness Since 2016</span>
+    <ul class="footer-links">
+      <li><a href="services.html">Class schedule and prices</a></li>
+      <li><a href="enquiry.html">Book a free trial class</a></li>
+      <li><a href="contact.html">Find MetroGym on the map</a></li>
+      <li><a href="about.html">Our story and founder</a></li>
+    </ul>
   </div>
 </footer>
 
