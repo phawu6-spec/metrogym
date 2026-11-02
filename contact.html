@@ -1,23 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | MetroGym</title>
+
+<!-- SEO: unique title, description and keywords for this page -->
+<title>Contact & Map | MetroGym Cape Road, Gqeberha</title>
+<meta name="description" content="Contact MetroGym on Cape Road, Gqeberha. See opening hours, find our locations on the map, or send a message to the team.">
+<meta name="keywords" content="contact MetroGym, gym Cape Road Gqeberha, gym opening hours, gym location map, MetroGym phone">
+<meta name="author" content="Phawu Zotwa">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1A1B1D">
+<link rel="canonical" href="https://phawu6-spec.github.io/metrogym/contact.html">
+
+<!-- Social sharing previews (Open Graph / Twitter) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MetroGym">
+<meta property="og:title" content="Contact & Map | MetroGym Cape Road, Gqeberha">
+<meta property="og:description" content="Contact MetroGym on Cape Road, Gqeberha. See opening hours, find our locations on the map, or send a message to the team.">
+<meta property="og:url" content="https://phawu6-spec.github.io/metrogym/contact.html">
+<meta property="og:image" content="https://phawu6-spec.github.io/metrogym/images/gym-exterior.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="images/logo-mark.png">
+
+<!-- Fonts and stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script>document.documentElement.className += ' js';</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "name": "MetroGym",
+  "url": "https://phawu6-spec.github.io/metrogym/",
+  "image": "https://phawu6-spec.github.io/metrogym/images/gym-exterior.png",
+  "description": "Coach-led functional fitness and CrossFit-style classes on Cape Road, Gqeberha, founded in 2016 by Asavela Kahla.",
+  "telephone": "+27415550123",
+  "email": "info@metrogym.co.za",
+  "foundingDate": "2016",
+  "founder": {
+    "@type": "Person",
+    "name": "Asavela Kahla"
+  },
+  "priceRange": "R200 - R550 per month",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Cape Road",
+    "addressLocality": "Gqeberha",
+    "addressRegion": "Eastern Cape",
+    "addressCountry": "ZA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.9456,
+    "longitude": 25.5702
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "05:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "07:00",
+      "closes": "12:00"
+    }
+  ]
+}
+</script>
 </head>
 <body>
-<!-- Contact page — address, phone, email, hours, and quick links to the enquiry form. -->
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<!-- Site header: brand logo and primary navigation, shared across all pages -->
+<!-- Site header: brand and primary navigation, shared across all pages -->
 <header>
   <div class="nav-wrap">
-    <a href="index.html" class="brand">METRO<span>GYM</span></a>
+    <a href="index.html" class="brand" aria-label="MetroGym home">METRO<span>GYM</span></a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </label>
-    <nav>
+    <nav id="site-nav" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -30,7 +106,7 @@
 </header>
 
 <!-- Main page content -->
-<main>
+<main id="main">
 
 <section class="hero" style="padding:70px 0 50px;">
   <div class="container">
@@ -41,20 +117,21 @@
 
 <section>
   <div class="container">
-    <img src="images/gym-exterior.png" alt="MetroGym exterior on Cape Road, Gqeberha" class="photo">
+    <img src="images/gym-exterior.png" alt="MetroGym exterior on Cape Road, Gqeberha" class="photo" width="464" height="743">
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="grid" style="grid-template-columns: 1.2fr 1fr;">
+    <div class="grid grid-2">
       <div>
         <p class="eyebrow-label">Details</p>
         <h2>Get In Touch</h2>
+        <p style="margin-top:10px;"><span class="badge" data-open-status>Checking opening hours…</span></p>
         <ul class="info-list">
           <li><strong>Address</strong> Cape Road, Gqeberha, South Africa</li>
-          <li><strong>Phone</strong> 041 555 0123</li>
-          <li><strong>Email</strong> info@metrogym.co.za</li>
+          <li><strong>Phone</strong> <a href="tel:+27415550123">041 555 0123</a></li>
+          <li><strong>Email</strong> <a href="mailto:info@metrogym.co.za">info@metrogym.co.za</a></li>
           <li><strong>Hours</strong> Mon–Fri 05:00–20:00, Sat 07:00–12:00</li>
         </ul>
       </div>
@@ -67,39 +144,77 @@
   </div>
 </section>
 
+<!-- Interactive map: Leaflet + OpenStreetMap, two locations (see js/script.js) -->
 <section class="alt">
+  <div class="container">
+    <p class="eyebrow-label">Locations</p>
+    <h2>Find Us On The Map</h2>
+    <div class="map-controls">
+      <button type="button" data-map-target="main" aria-pressed="false">Show Cape Road facility</button>
+      <button type="button" data-map-target="walmer" aria-pressed="false">Show Walmer (opening soon)</button>
+    </div>
+    <div id="map" role="region" aria-label="Map of MetroGym locations in Gqeberha">Loading map…</div>
+    <p style="color:var(--steel); margin-top:12px; font-size:0.9rem;">Prefer your own map app? <a href="https://www.openstreetmap.org/?mlat=-33.9456&amp;mlon=25.5702#map=15/-33.9456/25.5702" rel="noopener" target="_blank">Open MetroGym Cape Road in OpenStreetMap</a>.</p>
+  </div>
+</section>
+
+<section>
   <div class="container">
     <p class="eyebrow-label">General Message</p>
     <h2>Send Us A Message</h2>
-    <p style="color:var(--steel); max-width:560px; margin-top:10px;">For anything that isn't a trial booking — feedback, membership queries, or partnership enquiries — send a message directly and we'll reply by email.</p>
+    <p style="color:var(--steel); max-width:560px; margin-top:10px;">For anything that isn't a class booking — feedback, membership questions or partnership ideas. Your message is compiled into an email to MetroGym. To ask about a specific class, use the <a href="enquiry.html">class enquiry form</a>.</p>
 
-    <form id="contact-form" novalidate>
+    <!-- Contact form: a GENERAL message. The action attribute names the recipient; js/script.js validates, then compiles the email. -->
+    <form id="contact-form" action="mailto:info@metrogym.co.za" method="post" enctype="text/plain" aria-label="Contact form">
       <div class="field">
-        <label for="c-name">Full Name</label>
-        <input type="text" id="c-name" name="name" required>
+        <label for="c-name">Full name</label>
+        <input type="text" id="c-name" name="name" required minlength="2" maxlength="60" autocomplete="name" data-name-field>
         <span class="field-error" id="c-name-error"></span>
       </div>
       <div class="field">
-        <label for="c-email">Email Address</label>
-        <input type="email" id="c-email" name="email" required>
+        <label for="c-email">Email address</label>
+        <input type="email" id="c-email" name="email" required maxlength="120" autocomplete="email">
         <span class="field-error" id="c-email-error"></span>
       </div>
       <div class="field">
-        <label for="c-type">Type Of Message</label>
-        <select id="c-type" name="type" required>
+        <label for="c-phone">Phone number (optional)</label>
+        <input type="tel" id="c-phone" name="phone" maxlength="18" pattern="(\+27|0)[0-9 \-]{9,14}" placeholder="082 123 4567" autocomplete="tel" data-required-if-phone-reply>
+        <span class="field-error" id="c-phone-error"></span>
+      </div>
+      <div class="field">
+        <label for="c-type">Type of message</label>
+        <select id="c-type" name="type" required data-msg="Please select the type of message you are sending.">
           <option value="">Select a message type</option>
-          <option value="General Enquiry">General Enquiry</option>
+          <option value="General question">General question</option>
           <option value="Feedback">Feedback</option>
-          <option value="Membership Query">Membership Query</option>
-          <option value="Partnership / Sponsorship">Partnership / Sponsorship</option>
+          <option value="Membership query">Membership query</option>
+          <option value="Partnership or sponsorship">Partnership or sponsorship</option>
+          <option value="Complaint">Complaint</option>
         </select>
         <span class="field-error" id="c-type-error"></span>
       </div>
       <div class="field">
-        <label for="c-message">Message</label>
-        <textarea id="c-message" name="message" placeholder="Write your message here..." required></textarea>
+        <label for="c-subject">Subject</label>
+        <input type="text" id="c-subject" name="subject" required minlength="5" maxlength="80">
+        <span class="field-error" id="c-subject-error"></span>
+      </div>
+      <div class="field">
+        <label for="c-message">Your message</label>
+        <textarea id="c-message" name="message" required minlength="20" maxlength="1000" placeholder="Write your message here (at least 20 characters)..."></textarea>
+        <span class="counter" id="c-message-count">0 / 1000</span>
         <span class="field-error" id="c-message-error"></span>
       </div>
+      <fieldset class="field">
+        <legend>How should we reply?</legend>
+        <div class="choice-row">
+          <label class="choice"><input type="radio" id="c-reply" name="reply" value="email" checked required> By email</label>
+          <label class="choice"><input type="radio" id="c-reply-phone" name="reply" value="phone"> By phone</label>
+        </div>
+        <span class="field-error" id="c-reply-error"></span>
+      </fieldset>
+      <!-- Honeypot: hidden from people, bots tend to fill it in -->
+      <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
       <button type="submit" class="btn">Send Message</button>
       <div id="contact-response" class="form-response" role="status" aria-live="polite"></div>
     </form>
@@ -108,14 +223,21 @@
 
 </main>
 
-<!-- Site footer: copyright and tagline, shared across all pages -->
+<!-- Site footer: copyright, tagline and internal links, shared across all pages -->
 <footer>
   <div class="container">
-    <span>&copy; 2026 MetroGym. Cape Road, Gqeberha.</span>
+    <span>&copy; <span id="year">2026</span> MetroGym. Cape Road, Gqeberha.</span>
     <span>Functional Fitness Since 2016</span>
+    <ul class="footer-links">
+      <li><a href="services.html">Class schedule and prices</a></li>
+      <li><a href="enquiry.html">Book a free trial class</a></li>
+      <li><a href="contact.html">Find MetroGym on the map</a></li>
+      <li><a href="about.html">Our story and founder</a></li>
+    </ul>
   </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="js/script.js"></script>
 </body>
 </html>

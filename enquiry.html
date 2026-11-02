@@ -1,23 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Enquiry | MetroGym</title>
+
+<!-- SEO: unique title, description and keywords for this page -->
+<title>Class Enquiry & Free Trial | MetroGym Gqeberha</title>
+<meta name="description" content="Enquire about a MetroGym class in Gqeberha. Choose your class and start date to see the monthly cost and availability, and book your free first class.">
+<meta name="keywords" content="gym enquiry Gqeberha, free trial class, book fitness class, MetroGym prices, class availability">
+<meta name="author" content="Phawu Zotwa">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1A1B1D">
+<link rel="canonical" href="https://phawu6-spec.github.io/metrogym/enquiry.html">
+
+<!-- Social sharing previews (Open Graph / Twitter) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MetroGym">
+<meta property="og:title" content="Class Enquiry & Free Trial | MetroGym Gqeberha">
+<meta property="og:description" content="Enquire about a MetroGym class in Gqeberha. Choose your class and start date to see the monthly cost and availability, and book your free first class.">
+<meta property="og:url" content="https://phawu6-spec.github.io/metrogym/enquiry.html">
+<meta property="og:image" content="https://phawu6-spec.github.io/metrogym/images/hero-training.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="images/logo-mark.png">
+
+<!-- Fonts and stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.className += ' js';</script>
 </head>
 <body>
-<!-- Enquiry page — trial booking / general enquiry form. -->
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<!-- Site header: brand logo and primary navigation, shared across all pages -->
+<!-- Site header: brand and primary navigation, shared across all pages -->
 <header>
   <div class="nav-wrap">
-    <a href="index.html" class="brand">METRO<span>GYM</span></a>
+    <a href="index.html" class="brand" aria-label="MetroGym home">METRO<span>GYM</span></a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </label>
-    <nav>
+    <nav id="site-nav" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -30,59 +55,102 @@
 </header>
 
 <!-- Main page content -->
-<main>
+<main id="main">
 
 <section class="hero" style="padding:70px 0 50px;">
   <div class="container">
     <p class="eyebrow">Book A Free Trial</p>
     <h1>Send an Enquiry</h1>
-    <p class="lead">Tell us a bit about yourself and a coach will reach out to schedule your first session.</p>
+    <p class="lead">Ask about a class and we will show you the cost and availability for your chosen start date straight away.</p>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <form id="enquiry-form" novalidate>
+    <!-- Enquiry form: about ONE class (cost + availability). The action attribute names where the details are sent (the gym's email address); js/script.js validates first and answers on the page. -->
+    <form id="enquiry-form" action="mailto:info@metrogym.co.za" method="post" enctype="text/plain" aria-label="Class enquiry form">
       <div class="field">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required>
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" required minlength="2" maxlength="60" autocomplete="name" data-name-field>
         <span class="field-error" id="name-error"></span>
       </div>
       <div class="field">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required>
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required maxlength="120" autocomplete="email">
         <span class="field-error" id="email-error"></span>
       </div>
       <div class="field">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone">
+        <label for="phone">Phone number (optional)</label>
+        <input type="tel" id="phone" name="phone" maxlength="18" pattern="(\+27|0)[0-9 \-]{9,14}" placeholder="082 123 4567" autocomplete="tel">
+        <span class="field-hint">South African number, e.g. 082 123 4567 or +27 82 123 4567.</span>
+        <span class="field-error" id="phone-error"></span>
       </div>
       <div class="field">
-        <label for="interest">I'm Interested In</label>
-        <select id="interest" name="interest" required>
-          <option value="MetroFit">MetroFit</option>
-          <option value="Strength & Conditioning">Strength &amp; Conditioning</option>
-          <option value="MetroStart">MetroStart (Beginners)</option>
-          <option value="Not Sure Yet">Not Sure Yet</option>
+        <label for="class">Class I'm interested in</label>
+        <select id="class" name="class" required data-msg="Please choose the class you would like to enquire about.">
+          <option value="">Choose a class</option>
+          <option value="metrofit">MetroFit</option>
+          <option value="strength">Strength &amp; Conditioning</option>
+          <option value="metrostart">MetroStart (beginners)</option>
+          <option value="community-wod">Community WOD</option>
         </select>
+        <span class="field-error" id="class-error"></span>
+      </div>
+      <fieldset class="field">
+        <legend>Preferred time of day</legend>
+        <div class="choice-row">
+          <label class="choice"><input type="radio" id="session" name="session" value="any" checked required> No preference</label>
+          <label class="choice"><input type="radio" id="session-morning" name="session" value="morning"> Morning</label>
+          <label class="choice"><input type="radio" id="session-evening" name="session" value="evening"> Evening</label>
+        </div>
+        <span class="field-error" id="session-error"></span>
+      </fieldset>
+      <div class="field">
+        <label for="start-date">Preferred start date</label>
+        <input type="date" id="start-date" name="start-date" required data-msg="Please choose the date you would like to start.">
+        <span class="field-hint">Within the next 60 days. We are closed on Sundays.</span>
+        <span class="field-error" id="start-date-error"></span>
       </div>
       <div class="field">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Tell us about your fitness goals or ask a question..."></textarea>
+        <label for="message">Anything we should know? (optional)</label>
+        <textarea id="message" name="message" maxlength="500" placeholder="Tell us about your fitness goals, injuries or questions..."></textarea>
+        <span class="counter" id="message-count">0 / 500</span>
+        <span class="field-error" id="message-error"></span>
       </div>
+      <div class="field">
+        <label class="choice"><input type="checkbox" id="consent" name="consent" required data-msg="Please agree so that we can reply to your enquiry."> I agree that MetroGym may contact me about this enquiry.</label>
+        <span class="field-error" id="consent-error"></span>
+      </div>
+      <!-- Honeypot: hidden from people, bots tend to fill it in -->
+      <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
       <button type="submit" class="btn">Submit Enquiry</button>
       <div id="enquiry-response" class="form-response" role="status" aria-live="polite"></div>
     </form>
+
+    <h2 style="margin-top:56px;">What Happens Next</h2>
+    <ol class="steps">
+      <li>We check the class timetable for your chosen start date.</li>
+      <li>You see the monthly cost and how many spots are left, right here.</li>
+      <li>Send the enquiry to our team and a coach confirms your free first class.</li>
+    </ol>
+    <p style="color:var(--steel); margin-top:18px;">Want to compare classes first? Browse the <a href="services.html">class schedule and prices</a>, or <a href="contact.html">contact MetroGym</a> with a general question.</p>
   </div>
 </section>
 
 </main>
 
-<!-- Site footer: copyright and tagline, shared across all pages -->
+<!-- Site footer: copyright, tagline and internal links, shared across all pages -->
 <footer>
   <div class="container">
-    <span>&copy; 2026 MetroGym. Cape Road, Gqeberha.</span>
+    <span>&copy; <span id="year">2026</span> MetroGym. Cape Road, Gqeberha.</span>
     <span>Functional Fitness Since 2016</span>
+    <ul class="footer-links">
+      <li><a href="services.html">Class schedule and prices</a></li>
+      <li><a href="enquiry.html">Book a free trial class</a></li>
+      <li><a href="contact.html">Find MetroGym on the map</a></li>
+      <li><a href="about.html">Our story and founder</a></li>
+    </ul>
   </div>
 </footer>
 

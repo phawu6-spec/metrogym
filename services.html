@@ -1,23 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Classes | MetroGym</title>
+
+<!-- SEO: unique title, description and keywords for this page -->
+<title>Classes, Schedule & Prices | MetroGym Gqeberha</title>
+<meta name="description" content="Compare MetroGym classes in Gqeberha: MetroFit, Strength & Conditioning, MetroStart and Community WOD. See the weekly schedule and monthly prices.">
+<meta name="keywords" content="gym classes Gqeberha, class schedule, MetroFit, strength and conditioning, beginner fitness classes, gym prices Gqeberha">
+<meta name="author" content="Phawu Zotwa">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1A1B1D">
+<link rel="canonical" href="https://phawu6-spec.github.io/metrogym/services.html">
+
+<!-- Social sharing previews (Open Graph / Twitter) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MetroGym">
+<meta property="og:title" content="Classes, Schedule & Prices | MetroGym Gqeberha">
+<meta property="og:description" content="Compare MetroGym classes in Gqeberha: MetroFit, Strength & Conditioning, MetroStart and Community WOD. See the weekly schedule and monthly prices.">
+<meta property="og:url" content="https://phawu6-spec.github.io/metrogym/services.html">
+<meta property="og:image" content="https://phawu6-spec.github.io/metrogym/images/class-session.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="images/logo-mark.png">
+
+<!-- Fonts and stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.className += ' js';</script>
 </head>
 <body>
-<!-- Services page — class types offered and the weekly class schedule. -->
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<!-- Site header: brand logo and primary navigation, shared across all pages -->
+<!-- Site header: brand and primary navigation, shared across all pages -->
 <header>
   <div class="nav-wrap">
-    <a href="index.html" class="brand">METRO<span>GYM</span></a>
+    <a href="index.html" class="brand" aria-label="MetroGym home">METRO<span>GYM</span></a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </label>
-    <nav>
+    <nav id="site-nav" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -30,7 +55,7 @@
 </header>
 
 <!-- Main page content -->
-<main>
+<main id="main">
 
 <section class="hero" style="padding:70px 0 50px;">
   <div class="container">
@@ -41,27 +66,84 @@
 
 <section>
   <div class="container">
-    <img src="images/class-session.png" alt="Coached class session in progress at MetroGym" class="photo">
+    <img src="images/class-session.png" alt="Coached functional fitness class session in progress at MetroGym" class="photo" width="570" height="603">
   </div>
 </section>
 
+<!-- Class explorer: search, filter and sort handled by js/script.js. All class details are plain HTML so search engines can read them. -->
 <section>
   <div class="container">
     <p class="eyebrow-label">Class Types</p>
-    <h2>Pick Your Track</h2>
-    <div class="grid">
-      <div class="card">
+    <h2>Find Your Class</h2>
+
+    <div class="explorer-tools" role="search" aria-label="Find a class">
+      <div class="field">
+        <label for="class-search">Search classes</label>
+        <input type="search" id="class-search" placeholder="Try &quot;beginner&quot; or &quot;barbell&quot;" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="class-level">Level</label>
+        <select id="class-level">
+          <option value="all">Any level</option>
+          <option value="beginner">Beginner</option>
+          <option value="everyone">All levels welcome</option>
+          <option value="experienced">Experienced</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="class-time">Time of day</label>
+        <select id="class-time">
+          <option value="all">Any time</option>
+          <option value="morning">Morning</option>
+          <option value="evening">Evening</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="class-sort">Sort by</label>
+        <select id="class-sort">
+          <option value="name">Name (A–Z)</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+        </select>
+      </div>
+    </div>
+    <div class="explorer-meta">
+      <span id="class-count" role="status" aria-live="polite">Showing 4 of 4 classes</span>
+      <button type="button" class="link-button" id="class-reset">Clear search and filters</button>
+    </div>
+
+    <div class="grid" id="class-grid">
+      <article class="card class-card reveal" data-name="MetroFit" data-level="everyone" data-price="450" data-times="morning evening" data-keywords="functional fitness conditioning hiit crossfit full body cardio">
         <h3>MetroFit</h3>
+        <div class="meta"><span class="badge">All levels</span><span class="badge">Morning &amp; evening</span></div>
         <p>Our signature functional fitness class — varied, high-intensity, coach-led. Suitable for all levels.</p>
-      </div>
-      <div class="card">
+        <p class="price">R450 <small>per month</small></p>
+        <a class="card-link" href="enquiry.html?class=metrofit">Enquire about MetroFit</a>
+      </article>
+      <article class="card class-card reveal" data-name="Strength &amp; Conditioning" data-level="experienced" data-price="550" data-times="evening" data-keywords="barbell weights lifting powerlifting strength squat deadlift">
         <h3>Strength &amp; Conditioning</h3>
+        <div class="meta"><span class="badge">Experienced</span><span class="badge">Evenings</span></div>
         <p>Barbell-focused sessions building raw strength with structured progressions.</p>
-      </div>
-      <div class="card">
+        <p class="price">R550 <small>per month</small></p>
+        <a class="card-link" href="enquiry.html?class=strength">Enquire about Strength &amp; Conditioning</a>
+      </article>
+      <article class="card class-card reveal" data-name="MetroStart" data-level="beginner" data-price="350" data-times="morning" data-keywords="beginner intro basics foundations first time starter new">
         <h3>MetroStart</h3>
+        <div class="meta"><span class="badge">Beginner</span><span class="badge">Mornings</span></div>
         <p>A beginner on-ramp covering movement basics before joining regular classes.</p>
-      </div>
+        <p class="price">R350 <small>per month</small></p>
+        <a class="card-link" href="enquiry.html?class=metrostart">Enquire about MetroStart</a>
+      </article>
+      <article class="card class-card reveal" data-name="Community WOD" data-level="everyone" data-price="200" data-times="evening" data-keywords="friday social community workout guests friends fun">
+        <h3>Community WOD</h3>
+        <div class="meta"><span class="badge">All levels</span><span class="badge">Friday evening</span></div>
+        <p>A social Friday workout for all levels, open to members and their guests.</p>
+        <p class="price">R200 <small>per month</small></p>
+        <a class="card-link" href="enquiry.html?class=community-wod">Enquire about Community WOD</a>
+      </article>
+    </div>
+    <div class="empty-state" id="class-empty" hidden>
+      <p>No classes match your search. Try a different word, or <button type="button" class="link-button" onclick="document.getElementById('class-reset').click()">clear the filters</button>.</p>
     </div>
   </div>
 </section>
@@ -70,30 +152,68 @@
   <div class="container">
     <p class="eyebrow-label">This Week</p>
     <h2>Class Schedule</h2>
+    <p style="color:var(--steel); margin-top:10px;">Today's row is highlighted automatically.</p>
     <table>
+      <caption class="sr-only">MetroGym weekly class timetable</caption>
       <thead>
-        <tr><th>Day</th><th>Morning</th><th>Evening</th></tr>
+        <tr><th scope="col">Day</th><th scope="col">Morning</th><th scope="col">Evening</th></tr>
       </thead>
       <tbody>
-        <tr><td>Monday</td><td>05:30 MetroFit</td><td>18:00 Strength &amp; Conditioning</td></tr>
-        <tr><td>Tuesday</td><td>05:30 MetroStart</td><td>18:00 MetroFit</td></tr>
-        <tr><td>Wednesday</td><td>05:30 MetroFit</td><td>18:00 Strength &amp; Conditioning</td></tr>
-        <tr><td>Thursday</td><td>05:30 MetroStart</td><td>18:00 MetroFit</td></tr>
-        <tr><td>Friday</td><td>05:30 MetroFit</td><td>17:00 Community WOD</td></tr>
-        <tr><td>Saturday</td><td>08:00 MetroFit</td><td>—</td></tr>
+        <tr data-day="1"><td>Monday</td><td>05:30 MetroFit</td><td>18:00 Strength &amp; Conditioning</td></tr>
+        <tr data-day="2"><td>Tuesday</td><td>05:30 MetroStart</td><td>18:00 MetroFit</td></tr>
+        <tr data-day="3"><td>Wednesday</td><td>05:30 MetroFit</td><td>18:00 Strength &amp; Conditioning</td></tr>
+        <tr data-day="4"><td>Thursday</td><td>05:30 MetroStart</td><td>18:00 MetroFit</td></tr>
+        <tr data-day="5"><td>Friday</td><td>05:30 MetroFit</td><td>17:00 Community WOD</td></tr>
+        <tr data-day="6"><td>Saturday</td><td>08:00 MetroFit</td><td>—</td></tr>
       </tbody>
     </table>
     <a href="enquiry.html" class="btn" style="margin-top:30px;">Reserve Your Spot</a>
   </div>
 </section>
 
+<!-- Accordion: FAQ answers open and close with an animation -->
+<section>
+  <div class="container">
+    <p class="eyebrow-label">Before You Book</p>
+    <h2>Class Questions Answered</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" type="button" id="faq-1-btn" aria-expanded="false" aria-controls="faq-1">Do I need to be fit before I start?<span class="icon" aria-hidden="true"></span></button></h3>
+        <div class="accordion-panel" id="faq-1" role="region" aria-labelledby="faq-1-btn"><p>No. Every workout is scaled to the athlete in front of us. If you are brand new, our MetroStart class covers the movement basics first.</p></div>
+      </div>
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" type="button" id="faq-2-btn" aria-expanded="false" aria-controls="faq-2">What should I bring to my first class?<span class="icon" aria-hidden="true"></span></button></h3>
+        <div class="accordion-panel" id="faq-2" role="region" aria-labelledby="faq-2-btn"><p>A water bottle, a small towel and clean, flat-soled training shoes. We provide all of the equipment.</p></div>
+      </div>
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" type="button" id="faq-3-btn" aria-expanded="false" aria-controls="faq-3">How does the free first class work?<span class="icon" aria-hidden="true"></span></button></h3>
+        <div class="accordion-panel" id="faq-3" role="region" aria-labelledby="faq-3-btn"><p>Send us an enquiry and choose a class and start date. Arrive ten minutes early to meet your coach — there is no payment or contract for your first class.</p></div>
+      </div>
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" type="button" id="faq-4-btn" aria-expanded="false" aria-controls="faq-4">Can I change or cancel a booking?<span class="icon" aria-hidden="true"></span></button></h3>
+        <div class="accordion-panel" id="faq-4" role="region" aria-labelledby="faq-4-btn"><p>Yes. Let us know at least 12 hours before the class by email or phone so we can offer your spot to someone on the waiting list.</p></div>
+      </div>
+      <div class="accordion-item">
+        <h3><button class="accordion-trigger" type="button" id="faq-5-btn" aria-expanded="false" aria-controls="faq-5">Which class is best if I want to build strength?<span class="icon" aria-hidden="true"></span></button></h3>
+        <div class="accordion-panel" id="faq-5" role="region" aria-labelledby="faq-5-btn"><p>Strength &amp; Conditioning is barbell-focused and suits people with some training experience. Beginners should start with MetroStart, then move on to MetroFit.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<!-- Site footer: copyright and tagline, shared across all pages -->
+<!-- Site footer: copyright, tagline and internal links, shared across all pages -->
 <footer>
   <div class="container">
-    <span>&copy; 2026 MetroGym. Cape Road, Gqeberha.</span>
+    <span>&copy; <span id="year">2026</span> MetroGym. Cape Road, Gqeberha.</span>
     <span>Functional Fitness Since 2016</span>
+    <ul class="footer-links">
+      <li><a href="services.html">Class schedule and prices</a></li>
+      <li><a href="enquiry.html">Book a free trial class</a></li>
+      <li><a href="contact.html">Find MetroGym on the map</a></li>
+      <li><a href="about.html">Our story and founder</a></li>
+    </ul>
   </div>
 </footer>
 
