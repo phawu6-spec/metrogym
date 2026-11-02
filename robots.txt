@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://phawu6-spec.github.io/metrogym/sitemap.xml
